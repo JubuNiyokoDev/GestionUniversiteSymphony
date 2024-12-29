@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Departements{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="display-6 text-center mb-4">Departements</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ departement.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ departement.nomd }}</td>
+                </tr>
+                <tr>
+                    <th>Code</th>
+                    <td>{{ departement.coded }}</td>
+                </tr>
+                <tr>
+                    <th>Faculté</th>
+                    <td>{{ departement.faculite.codef }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_departements_index') }}" class="btn btn-secondary btn-sm me-2"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="{{ path('app_departements_edit', {'id': departement.id}) }}" class="btn btn-warning btn-sm me-2"><i class="fa-solid fa-pen"></i></a>
+
+        {{ include('departements/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

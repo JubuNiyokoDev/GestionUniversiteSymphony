@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscriptions{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="display-6 text-center mb-4">Inscriptions</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ inscription.id }}</td>
+                </tr>
+                <tr>
+                    <th>Année Académique</th>
+                    <td>{{ inscription.anneacademique }}</td>
+                </tr>
+                <tr>
+                    <th>Classe</th>
+                    <td>{{ inscription.classe.niveau }}</td>
+                </tr>
+                <tr>
+                    <th>Étudiant</th>
+                    <td>{{ inscription.etudiant.nom }} {{ inscription.etudiant.prenom }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_inscriptions_index') }}" class="btn btn-secondary btn-sm me-2"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="{{ path('app_inscriptions_edit', {'id': inscription.id}) }}" class="btn btn-warning btn-sm me-2"><i class="fa-solid fa-pen"></i></a>
+
+        {{ include('inscriptions/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

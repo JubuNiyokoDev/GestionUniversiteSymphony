@@ -1,0 +1,22 @@
+{
+  "name": "test_project",
+  "version": "1.0.0",
+  "description": "Symfony project",
+  "scripts": {
+    "dev": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "dependencies": {
+    "bootstrap": "4.5.2",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^1.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2",
+    "sass-loader": "^8.0.2",
+    "sass": "^1.26.10"
+  }
+}

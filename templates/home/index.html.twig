@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="display-6 text-center mb-4">Urakaza Neza Kuri Test WebApp Avec Symfony</h1>
+
+        <!-- Ajout de la classe "dataTable" à la table pour DataTables -->
+        <table id="statTable" class="table table-striped table-bordered table-hover dataTable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Faculté Total</th>
+                    <th>Département Total</th>
+                    <th>Classe Total</th>
+                    <th>Étudiant Total</th>
+                    <th>Inscription Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ faculites|length }}</td>
+                    <td>{{ departements|length }}</td>
+                    <td>{{ classes|length }}</td>
+                    <td>{{ etudiants|length }}</td>
+                    <td>{{ inscriptions|length }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

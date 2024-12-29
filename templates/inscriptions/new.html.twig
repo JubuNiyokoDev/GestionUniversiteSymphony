@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Inscriptions{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="display-6 text-center mb-4">Create New Inscriptions</h1>
+
+        {{ form_start(form, {'attr': {'class': 'form'}}) }}
+            <div class="mb-3">
+                {{ form_label(form.anneacademique, 'Année Académique', {'attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.anneacademique, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.anneacademique) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.classe, 'Classe', {'attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.classe, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.classe) }}
+            </div>
+            <div class="mb-3">
+                {{ form_label(form.etudiant, 'Étudiant', {'attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.etudiant, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.etudiant) }}
+            </div>
+            <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_inscriptions_index') }}" class="btn btn-secondary mt-3"><i class="fa-solid fa-chevron-left"></i> Back</a>
+    </div>
+{% endblock %}

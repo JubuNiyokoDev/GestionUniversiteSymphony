@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Etudiant{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1 class="display-6 text-center mb-4">Edit Etudiant {{ etudiant.nom }} {{ etudiant.prenom }}</h1>
+
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    {{ form_label(form.nom, 'Nom', {'attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                    {{ form_errors(form.nom) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_label(form.prenom, 'Prénom', {'attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                    {{ form_errors(form.prenom) }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    {{ form_label(form.ddn, 'Date de Naissance', {'attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.ddn, {'attr': {'class': 'form-control', 'placeholder': 'Date de Naissance'}}) }}
+                    {{ form_errors(form.ddn) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_label(form.gerne, 'Genre', {'attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.gerne, {'attr': {'class': 'form-select'}}) }}
+                    {{ form_errors(form.gerne) }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    {{ form_label(form.noteexeta, 'Note', {'attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.noteexeta, {'attr': {'class': 'form-control', 'placeholder': 'Note'}}) }}
+                    {{ form_errors(form.noteexeta) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_label(form.classe, 'Classe', {'attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.classe, {'attr': {'class': 'form-control', 'placeholder': 'Classe'}}) }}
+                    {{ form_errors(form.classe) }}
+                </div>
+            </div>
+            <button class="btn btn-primary">{{ button_label|default('Update') }}</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_etudiants_index') }}" class="btn btn-secondary mt-3"><i class="fa-solid fa-chevron-left"></i></a>
+    </div>
+{% endblock %}
