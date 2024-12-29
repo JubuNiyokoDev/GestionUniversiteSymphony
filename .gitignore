@@ -62,4 +62,22 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+<<<<<<< HEAD
 >>>>>>> eb725d4 (Add initial set of files)
+=======
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+>>>>>>> 3511ba0 (Add webapp packages)
